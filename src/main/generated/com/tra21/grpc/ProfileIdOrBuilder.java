@@ -8,7 +8,7 @@ public interface ProfileIdOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>int32 Id = 1;</code>
+   * <code>int32 id = 1;</code>
    * @return The id.
    */
   int getId();

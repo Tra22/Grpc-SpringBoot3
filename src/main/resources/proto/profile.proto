@@ -21,7 +21,7 @@ message ProfileDto {
     int32  id = 1;
     string first_name = 2;
     string last_name = 3;
-    string image_file = 4;
+    string image_path = 4;
 }
 message PaginationReq {
     int32 page = 1;

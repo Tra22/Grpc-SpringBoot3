@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   private ProfileDto() {
     firstName_ = "";
     lastName_ = "";
-    imageFile_ = com.google.protobuf.ByteString.EMPTY;
+    imagePath_ = "";
   }
 
   @java.lang.Override
@@ -69,8 +69,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            imageFile_ = input.readBytes();
+            imagePath_ = s;
             break;
           }
           default: {
@@ -187,14 +188,40 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int IMAGE_FILE_FIELD_NUMBER = 4;
-  private com.google.protobuf.ByteString imageFile_;
+  public static final int IMAGE_PATH_FIELD_NUMBER = 4;
+  private volatile java.lang.Object imagePath_;
   /**
-   * <code>bytes image_file = 4;</code>
-   * @return The imageFile.
+   * <code>string image_path = 4;</code>
+   * @return The imagePath.
    */
-  public com.google.protobuf.ByteString getImageFile() {
-    return imageFile_;
+  public java.lang.String getImagePath() {
+    java.lang.Object ref = imagePath_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      imagePath_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string image_path = 4;</code>
+   * @return The bytes for imagePath.
+   */
+  public com.google.protobuf.ByteString
+      getImagePathBytes() {
+    java.lang.Object ref = imagePath_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      imagePath_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -220,8 +247,8 @@ private static final long serialVersionUID = 0L;
     if (!getLastNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, lastName_);
     }
-    if (!imageFile_.isEmpty()) {
-      output.writeBytes(4, imageFile_);
+    if (!getImagePathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, imagePath_);
     }
     unknownFields.writeTo(output);
   }
@@ -242,9 +269,8 @@ private static final long serialVersionUID = 0L;
     if (!getLastNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, lastName_);
     }
-    if (!imageFile_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(4, imageFile_);
+    if (!getImagePathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, imagePath_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -267,8 +293,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFirstName())) return false;
     if (!getLastName()
         .equals(other.getLastName())) return false;
-    if (!getImageFile()
-        .equals(other.getImageFile())) return false;
+    if (!getImagePath()
+        .equals(other.getImagePath())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -286,8 +312,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getFirstName().hashCode();
     hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getLastName().hashCode();
-    hash = (37 * hash) + IMAGE_FILE_FIELD_NUMBER;
-    hash = (53 * hash) + getImageFile().hashCode();
+    hash = (37 * hash) + IMAGE_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + getImagePath().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -427,7 +453,7 @@ private static final long serialVersionUID = 0L;
 
       lastName_ = "";
 
-      imageFile_ = com.google.protobuf.ByteString.EMPTY;
+      imagePath_ = "";
 
       return this;
     }
@@ -458,7 +484,7 @@ private static final long serialVersionUID = 0L;
       result.id_ = id_;
       result.firstName_ = firstName_;
       result.lastName_ = lastName_;
-      result.imageFile_ = imageFile_;
+      result.imagePath_ = imagePath_;
       onBuilt();
       return result;
     }
@@ -518,8 +544,9 @@ private static final long serialVersionUID = 0L;
         lastName_ = other.lastName_;
         onChanged();
       }
-      if (other.getImageFile() != com.google.protobuf.ByteString.EMPTY) {
-        setImageFile(other.getImageFile());
+      if (!other.getImagePath().isEmpty()) {
+        imagePath_ = other.imagePath_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -732,35 +759,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.ByteString imageFile_ = com.google.protobuf.ByteString.EMPTY;
+    private java.lang.Object imagePath_ = "";
     /**
-     * <code>bytes image_file = 4;</code>
-     * @return The imageFile.
+     * <code>string image_path = 4;</code>
+     * @return The imagePath.
      */
-    public com.google.protobuf.ByteString getImageFile() {
-      return imageFile_;
+    public java.lang.String getImagePath() {
+      java.lang.Object ref = imagePath_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        imagePath_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>bytes image_file = 4;</code>
-     * @param value The imageFile to set.
+     * <code>string image_path = 4;</code>
+     * @return The bytes for imagePath.
+     */
+    public com.google.protobuf.ByteString
+        getImagePathBytes() {
+      java.lang.Object ref = imagePath_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        imagePath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string image_path = 4;</code>
+     * @param value The imagePath to set.
      * @return This builder for chaining.
      */
-    public Builder setImageFile(com.google.protobuf.ByteString value) {
+    public Builder setImagePath(
+        java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      imageFile_ = value;
+      imagePath_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bytes image_file = 4;</code>
+     * <code>string image_path = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearImageFile() {
+    public Builder clearImagePath() {
       
-      imageFile_ = getDefaultInstance().getImageFile();
+      imagePath_ = getDefaultInstance().getImagePath();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string image_path = 4;</code>
+     * @param value The bytes for imagePath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImagePathBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      imagePath_ = value;
       onChanged();
       return this;
     }

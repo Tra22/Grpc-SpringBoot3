@@ -64,14 +64,14 @@ public final class Profile {
       "file\022\n\n\002id\030\001 \001(\005\022\022\n\nfirst_name\030\002 \001(\t\022\021\n\t" +
       "last_name\030\003 \001(\t\022\022\n\nimage_file\030\004 \001(\014\"S\n\nP" +
       "rofileDto\022\n\n\002id\030\001 \001(\005\022\022\n\nfirst_name\030\002 \001(" +
-      "\t\022\021\n\tlast_name\030\003 \001(\t\022\022\n\nimage_file\030\004 \001(\014" +
+      "\t\022\021\n\tlast_name\030\003 \001(\t\022\022\n\nimage_path\030\004 \001(\t" +
       "\"+\n\rPaginationReq\022\014\n\004page\030\001 \001(\005\022\014\n\004size\030" +
       "\002 \001(\005\"X\n\rPaginationRes\022\014\n\004page\030\001 \001(\005\022\014\n\004" +
       "size\030\002 \001(\005\022\026\n\016total_elements\030\003 \001(\005\022\023\n\013to" +
       "tal_pages\030\004 \001(\005\"n\n\013ProfilePage\0225\n\016pagina" +
       "tion_res\030\001 \001(\0132\035.com.tra21.grpc.Paginati" +
       "onRes\022(\n\004data\030\002 \003(\0132\032.com.tra21.grpc.Pro" +
-      "fileDto\"\027\n\tProfileId\022\n\n\002Id\030\001 \001(\0052\316\002\n\016Pro" +
+      "fileDto\"\027\n\tProfileId\022\n\n\002id\030\001 \001(\0052\316\002\n\016Pro" +
       "fileService\022K\n\013GetProfiles\022\035.com.tra21.g" +
       "rpc.PaginationReq\032\033.com.tra21.grpc.Profi" +
       "lePage\"\000\022E\n\nGetProfile\022\031.com.tra21.grpc." +
@@ -103,7 +103,7 @@ public final class Profile {
     internal_static_com_tra21_grpc_ProfileDto_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_tra21_grpc_ProfileDto_descriptor,
-        new java.lang.String[] { "Id", "FirstName", "LastName", "ImageFile", });
+        new java.lang.String[] { "Id", "FirstName", "LastName", "ImagePath", });
     internal_static_com_tra21_grpc_PaginationReq_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_com_tra21_grpc_PaginationReq_fieldAccessorTable = new

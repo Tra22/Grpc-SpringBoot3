@@ -1,8 +1,17 @@
 package com.tra21.grpc.dtos.requests;
 
-public record UpdateProfile(
-   Long id,
-   String firstName,
-   String lastName,
-   String profileImage
-) {}
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+public class UpdateProfile {
+   private Long id;
+   private String firstName;
+   private String lastName;
+   private String profileImage;
+}

@@ -10,6 +10,7 @@ import com.tra21.grpc.UpdateProfile;
 import com.tra21.grpc.mappers.PageMapper;
 import com.tra21.grpc.mappers.ProfileMapper;
 import com.tra21.grpc.services.IProfileService;
+import com.tra21.grpc.services.upload.interf.IUploadService;
 import com.tra21.grpc.stream.CreateProfileProofObserver;
 import com.tra21.grpc.stream.UpdateProfileProofObserver;
 import io.grpc.stub.StreamObserver;
@@ -22,6 +23,7 @@ public class ProfileGrpcServiceImpl extends ProfileServiceImplBase {
     private final IProfileService profileService;
     private final ProfileMapper profileMapper;
     private final PageMapper pageMapper;
+    private final IUploadService uploadService;
 
     @Override
     public void getProfiles(PaginationReq paginationReq, StreamObserver<ProfilePage> responseObserver){
@@ -42,10 +44,10 @@ public class ProfileGrpcServiceImpl extends ProfileServiceImplBase {
     }
     @Override
     public StreamObserver<CreateProfile> createProfileProof(StreamObserver<ProfileDto> responseObserver){
-        return new CreateProfileProofObserver(responseObserver, profileService, profileMapper);
+        return new CreateProfileProofObserver(responseObserver, profileService, uploadService, profileMapper);
     }
     @Override
     public StreamObserver<UpdateProfile> updateProfileProof(StreamObserver<ProfileDto> responseObserver){
-        return new UpdateProfileProofObserver(responseObserver, profileService, profileMapper);
+        return new UpdateProfileProofObserver(responseObserver, profileService, uploadService, profileMapper);
     }
 }

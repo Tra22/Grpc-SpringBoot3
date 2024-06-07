@@ -38,8 +38,14 @@ public interface ProfileDtoOrBuilder extends
       getLastNameBytes();
 
   /**
-   * <code>bytes image_file = 4;</code>
-   * @return The imageFile.
+   * <code>string image_path = 4;</code>
+   * @return The imagePath.
    */
-  com.google.protobuf.ByteString getImageFile();
+  java.lang.String getImagePath();
+  /**
+   * <code>string image_path = 4;</code>
+   * @return The bytes for imagePath.
+   */
+  com.google.protobuf.ByteString
+      getImagePathBytes();
 }
