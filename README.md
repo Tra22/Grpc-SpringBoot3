@@ -6,12 +6,11 @@ This example explained about spring boot3 with Grpc.
 The fully fledged server uses the following:
 
 * Spring Framework
+* SpringBoot
 * Spring Data Jpa
 * H2 database
 * Grpc Server
 * io.grpc
-* SpringBoot
-* Log4j2
 * Lombok
 * Mapstruct
 
